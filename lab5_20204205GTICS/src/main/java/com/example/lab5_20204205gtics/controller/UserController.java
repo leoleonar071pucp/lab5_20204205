@@ -42,15 +42,12 @@ public class UserController {
 
 
     @PostMapping("/save")
-    public String guardarUsuario(User usuario,
-                                  @RequestParam("birthdateStr") String birthdateStr,
-                                  @RequestParam("hiredateStr") String hiredateStr) {
+    public String guardarUsuario(User usuario) {
 
-        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
 
 
         userRepository.save(usuario);
-        return "redirect:/employee";
+        return "redirect:/";
     }
 
 
